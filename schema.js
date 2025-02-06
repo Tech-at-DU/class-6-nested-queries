@@ -35,7 +35,7 @@ const resolvers = {
   // Query types are resolved here
   Query: {
     posts: () => Array.from(posts.values()),
-    author: (_, { id }) => {
+    author: (_, { id }) => { // (parent, args, context, info)
       const author = authors.get(Number(id));
       // Throw an error if author is not found!
       if (!author) throw new Error(`Oops! Author with ID ${id} not found.`);
