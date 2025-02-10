@@ -12,60 +12,60 @@ This example code uses graphql-tools: https://the-guild.dev/graphql/tools/docs/g
 ## JS Map 
 See `data.js` for an example that implements `Map`. 
 
-### **🗺️ JavaScript `Map` Object Explained**
+### 🗺️ JavaScript `Map` Object Explained
 
 A **`Map`** in JavaScript is a built-in data structure that **stores key-value pairs** and allows fast lookup, insertion, and deletion of values based on keys.
 
 ---
 
-## **🔹 Key Features of `Map`**
-✅ **Preserves insertion order** – Unlike objects, `Map` remembers the order in which keys were inserted.  
-✅ **Efficient key lookups** – Faster than objects when checking for the existence of a key (`O(1)` complexity).  
-✅ **Any data type as a key** – Unlike objects (which only support strings or symbols as keys), `Map` supports **numbers, objects, functions, and even other Maps** as keys.  
+## 🔹 Key Features of `Map`
+✅ **Preserves insertion order** – Unlike objects, `Map` remembers the order in which keys were inserted.
+✅ **Efficient key lookups** – Faster than objects when checking for the existence of a key (`O(1)` complexity).
+✅ **Any data type as a key** – Unlike objects (which only support strings or symbols as keys), `Map` supports **numbers, objects, functions, and even other Maps** as keys. 
 ✅ **Built-in methods** – Provides useful methods like `.get()`, `.set()`, `.delete()`, and `.has()`.
 
 ---
 
-## **🔹 Basic Usage**
-### **1️⃣ Creating a `Map`**
+## 🔹 Basic Usage
+### 1️⃣ Creating a `Map`
 ```javascript
 const myMap = new Map();
 ```
 
-### **2️⃣ Adding Key-Value Pairs**
+### 2️⃣ Adding Key-Value Pairs
 ```javascript
 myMap.set("name", "Alice");
 myMap.set(1, "one"); // Number as a key
 myMap.set(true, "boolean"); // Boolean as a key
 ```
 
-### **3️⃣ Retrieving Values**
+### 3️⃣ Retrieving Values
 ```javascript
 console.log(myMap.get("name")); // Output: Alice
 console.log(myMap.get(1)); // Output: one
 console.log(myMap.get(true)); // Output: boolean
 ```
 
-### **4️⃣ Checking for Key Existence**
+### 4️⃣ Checking for Key Existence
 ```javascript
 console.log(myMap.has("name")); // true
 console.log(myMap.has("age")); // false
 ```
 
-### **5️⃣ Deleting a Key**
+### 5️⃣ Deleting a Key
 ```javascript
 myMap.delete(1);
 console.log(myMap.has(1)); // false
 ```
 
-### **6️⃣ Getting Map Size**
+### 6️⃣ Getting Map Size
 ```javascript
 console.log(myMap.size); // Output: 2 (only "name" and "boolean" remain)
 ```
 
 ---
 
-## **🔹 Why Use `Map` Instead of an Object?**
+## 🔹 Why Use `Map` Instead of an Object?
 | Feature | `Object` | `Map` |
 |---------|---------|-------|
 | 🔹 Key Types | Only strings & symbols | Any data type (numbers, objects, functions, etc.) |
@@ -76,8 +76,8 @@ console.log(myMap.size); // Output: 2 (only "name" and "boolean" remain)
 
 ---
 
-## **🔹 Iterating Over a `Map`**
-### **🔁 Using `.forEach()`**
+## 🔹 Iterating Over a `Map`
+### 🔁 Using `.forEach()`
 ```javascript
 myMap.forEach((value, key) => {
   console.log(`${key} => ${value}`);
@@ -89,7 +89,7 @@ name => Alice
 true => boolean
 ```
 
-### **🔁 Using `for...of`**
+### 🔁 Using `for...of`
 ```javascript
 for (let [key, value] of myMap) {
   console.log(`${key}: ${value}`);
@@ -98,10 +98,10 @@ for (let [key, value] of myMap) {
 
 ---
 
-## **🔹 Example: Using `Map` for Fast Lookups**
+## 🔹 Example: Using `Map` for Fast Lookups
 Instead of using an array and `find()`, which is slow (`O(n)` complexity), we can use a `Map` for instant lookup (`O(1)` complexity).
 
-### **🚀 Array Approach (Slow)**
+### 🚀 Array Approach (Slow)
 ```javascript
 const users = [
   { id: 1, name: "Alice" },
@@ -112,7 +112,7 @@ const user = users.find(user => user.id === 2); // O(n) complexity
 console.log(user.name); // Bob
 ```
 
-### **🚀 Map Approach (Fast)**
+### 🚀 Map Approach (Fast)
 ```javascript
 const usersMap = new Map([
   [1, { id: 1, name: "Alice" }],
@@ -124,7 +124,7 @@ console.log(usersMap.get(2).name); // Bob (O(1) complexity)
 
 ---
 
-## **🔹 When to Use `Map` vs. `Object`?**
+## 🔹 When to Use `Map` vs. `Object`?
 - **Use `Map` when:**
   - You need **fast lookups** and insertions.
   - Keys are **not just strings** (e.g., numbers, objects).
@@ -138,7 +138,7 @@ console.log(usersMap.get(2).name); // Bob (O(1) complexity)
 
 ---
 
-## **🔹 Practical Example: Using `Map` in GraphQL**
+## 🔹 Practical Example: Using `Map` in GraphQL
 Instead of this **slow array lookup**:
 ```javascript
 const authors = [
@@ -161,16 +161,16 @@ const findAuthor = (id) => authors.get(id);
 
 ---
 
-## **🔹 Conclusion**
+## 🔹 Conclusion
 ✅ `Map` is **faster** than objects for large datasets.  
 ✅ `Map` supports **any key type** (numbers, objects, functions).  
 ✅ `Map` provides **useful methods** like `.get()`, `.set()`, `.delete()`, and `.has()`.  
 ✅ `Map` is **iterable** and maintains key order.
 
-### **💡 Want a Challenge?**
+### 💡 Want a Challenge?
 Try implementing a **GraphQL API that stores users and posts in a `Map` instead of an array**! 🚀 
 
-#### **What is `Array.from()`?**
+#### What is `Array.from()`?
 `Array.from()` is a JavaScript method that **creates a new array from an iterable or array-like object**.
 
 📌 **Syntax:**
@@ -182,7 +182,7 @@ Array.from(iterable, mapFunction)
 
 ---
 
-### **🔹 Why Use `Array.from()` with `Map`?**
+### 🔹 Why Use `Array.from()` with `Map`?
 A **`Map`** stores key-value pairs and is **not an array**. It’s an **iterable**, but to use array methods (like `.filter()`, `.map()`, `.sort()`), we need to **convert it into an array** first.
 
 **Example: Converting a `Map` to an Array**
@@ -205,7 +205,7 @@ console.log(Array.from(users));
 
 ---
 
-### **🔹 Extracting Only the Values from a `Map`**
+### 🔹 Extracting Only the Values from a `Map`
 We often only need **the values** (not the keys). `Array.from()` helps us convert a `Map` into an array of values:
 
 ```javascript
@@ -223,7 +223,7 @@ Now, `usersArray` is a **normal array**, and we can use `.filter()`, `.map()`, `
 
 ---
 
-### **🔹 Practical Example: Using `Array.from()` in GraphQL**
+### 🔹 Practical Example: Using `Array.from()` in GraphQL
 When we store authors or posts in a `Map`, we need to return an array in our GraphQL resolvers.
 
 ❌ **Without `Array.from()` (Wrong)**
@@ -251,7 +251,7 @@ const resolvers = {
 
 ---
 
-### **🔹 Another Use Case: Filtering Data in a `Map`**
+### 🔹 Another Use Case: Filtering Data in a `Map`
 Imagine you store posts in a `Map`, and you want to get only the posts written by a specific author.
 
 ```javascript
@@ -274,7 +274,7 @@ console.log(getPostsByAuthor(1));
 
 ---
 
-### **🔹 Summary**
+### 🔹 Summary
 | **Feature**               | **Without `Array.from()`** | **With `Array.from()`** |
 |---------------------------|-----------------|----------------|
 | 🚀 Converts `Map` to array | ❌ No | ✅ Yes |
@@ -283,26 +283,26 @@ console.log(getPostsByAuthor(1));
 
 ---
 
-### **🔹 Final Thoughts**
+### 🔹 Final Thoughts
 - **`Array.from()`** is used to **convert iterables (like `Map` values) into arrays**.
 - This is **necessary in GraphQL** when returning lists from a `Map`.
 - It helps when **filtering, mapping, or modifying data** inside a `Map`.
 
 ## Nested Queries 
 
-### **🔹 Why Do We Have `Author` and `Post` in the Resolvers?**
+### 🔹 Why Do We Have `Author` and `Post` in the Resolvers?
 In GraphQL, **nested queries** require explicit resolver functions for non-scalar types like `Author` and `Post`. These resolvers tell GraphQL **how to fetch related data** when a field needs more than just returning a value from an object.
 
 ---
 
-## **🔹 How GraphQL Resolves Queries**
+## 🔹 How GraphQL Resolves Queries
 A GraphQL resolver is triggered **for each field** in a query. This means:
 1. The **top-level resolver** (like `Query.authors`) provides a **list of authors**.
 2. If the client requests **nested fields**, GraphQL will call **resolvers for `Author` and `Post`** to fetch those fields.
 
 ---
 
-### **🔹 Example GraphQL Query**
+### 🔹 Example GraphQL Query
 Suppose we send this GraphQL query:
 ```graphql
 query {
@@ -321,10 +321,10 @@ GraphQL resolves this step by step:
 
 ---
 
-## **🔹 Why Do We Need `Author` and `Post` in Resolvers?**
+## 🔹 Why Do We Need `Author` and `Post` in Resolvers?
 In your schema, `Post` has an `author`, and `Author` has a list of `posts`. Since these are **nested relationships**, we need resolvers for them.
 
-### **🛠 Example: Resolvers with `Author` and `Post`**
+### 🛠 Example: Resolvers with `Author` and `Post`
 ```javascript
 const resolvers = {
   Query: {
@@ -361,7 +361,7 @@ const resolvers = {
 
 ---
 
-## **🔹 Step-by-Step Execution for the Query**
+## 🔹 Step-by-Step Execution for the Query
 ```graphql
 query {
   posts {
@@ -382,7 +382,7 @@ query {
 
 ---
 
-### **🔹 Without `Author` and `Post` Resolvers, What Happens?**
+### 🔹 Without `Author` and `Post` Resolvers, What Happens?
 If we remove:
 ```javascript
 Post: {
@@ -393,7 +393,7 @@ Then **GraphQL won’t know how to resolve the `author` field in `Post`**, and i
 
 ---
 
-## **🔹 Another Example: Fetching an Author with Their Posts**
+## 🔹 Another Example: Fetching an Author with Their Posts
 ### **GraphQL Query**
 ```graphql
 query {
@@ -406,7 +406,7 @@ query {
   }
 }
 ```
-### **Step-by-Step Execution**
+### Step-by-Step Execution
 1. **`Query.author(id: 1)`** is called → Returns `Tom Coleman`.
 2. **GraphQL sees `posts { title }` inside `Author`**.
 3. **It calls `Author.posts(author)`**.
@@ -430,7 +430,7 @@ query {
 
 ---
 
-## **🔹 Summary**
+## 🔹 Summary
 | **Resolver Type** | **What It Does** |
 |-------------------|-----------------|
 | `Query.posts` | Fetches all posts |
@@ -438,7 +438,7 @@ query {
 | `Post.author` | Resolves the `author` field inside `Post` (fetches the correct author) |
 | `Author.posts` | Resolves the `posts` field inside `Author` (fetches the author's posts) |
 
-### **✅ Why Do We Need `Author` and `Post` in Resolvers?**
+### ✅ Why Do We Need `Author` and `Post` in Resolvers?
 ✔️ GraphQL **only auto-resolves scalar fields** (e.g., `title`, `firstName`).  
 ✔️ If a field contains **nested data**, **GraphQL must call another resolver**.  
 ✔️ `Author.posts` and `Post.author` **define the relationships**.  
@@ -448,8 +448,8 @@ query {
 ## Challenges 
 Solve at least one of the challenges below. 
 
-### **🚀 Challenge**
-#### **1️⃣ Add a "Comments" Feature**
+### 🚀 Challenge
+#### 1️⃣ Add a "Comments" Feature
 Extend the schema to include a `Comment` type and allow posts to have multiple comments.
 
 ✅ **Tasks:**

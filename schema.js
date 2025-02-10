@@ -59,7 +59,7 @@ const resolvers = {
     // This allows access to the firstName and lastName fields in a query
     posts: (author) => {
       // Uncomment the line below and see what happens when you query author
-      // console.log('Author.posts', author)
+      console.log('Author.posts', author)
       return Array.from(posts.values()).filter((post) => post.authorId === author.id);
     },
   },
@@ -68,7 +68,7 @@ const resolvers = {
     // When posts() is called we look up the author for each post here. 
     author: (post) => {
       // Uncomment the line below to see what happens when you query posts
-      // console.log('Post.Author', post)
+      console.log('Post.Author', post)
       return authors.get(post.authorId);
     },
   },
